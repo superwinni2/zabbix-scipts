@@ -10,28 +10,44 @@ curl need to be installed
 
 Preparations:
 Go to your Fritzbox and create a new user (default in my script is user "zabbix" with password "123456")
+
 Register your DECT device on the FritzBox write down the "AIN" Number of your device. We need that later.
+
 Instructions:
+
 Copy script to "External Scripts" directory of your Zabbix server. (Defaults to "/usr/lib/zabbix/externalscripts" you can look in your zabbix_server.conf)
+
 Open script and change variables "Fritzbox", "username" and "password"
+
 Fritzbox=Your FritzBox Address
+
 Username=Your Username to logon into your Fritzbox
+
 Passwort=Password for Username
 
 
 Create a new host:
+
 Name Host like what you like to (e.g. "Television")
+
 Cause external scripts can only be executed by zabbix server, the ip is 127.0.0.1 or localhost.
+
 On "Macros" create {$AIN} and type in your Number of your device (without spacebars)
 
  
 
 Create new Item:
+
 Name it like what you want to measure... (e.g. "Power consumption")
+
 Type: External check
+
 Key: ["{$AIN}","Leistung"]
+
 Type of information: Numeric (float)
+
 Units: W (for Watts)
+
 Update interval: 2m (it doesn't measure any faster)
 
 On Preprocession add a custom multiplier of 0.001.
