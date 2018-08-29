@@ -42,15 +42,26 @@ Now it should measure the power consumption.
 
 Possible Values:
 Liste - List of all AIN devices. Sperator is comma (,)
+
 Zustand - 0 = switch is off, 1 = switch is on, "inval" if unknown
+
+
 Status - 0 = not connected, 1 = connected (via DECT) if connection is lost it need some minutes to fall back to 0
+
 Leistung - Power Consumption in mW. "inval" if unknown
+
 Energie - Energy in Wh. "inval" if unknown
+
 Name - Name of switch. Can be configured on FritzBox Interface.
+
 Infos - List infos of all SmartHome devices in XML Format
+
 Temperatur - Temperature of switch in 0.1°C. Examples: 200 -> 20°C | 255 -> 25,5°C
+
 Solltemperatur - Configured "should be temperature" for thermostat in 0.5°C. 16-56 -> 8-28 °C (19 -> 9,5 °C)
+
 Komforttemperatur - Configured "comfort temperature" for thermostat in 0.5°C. 16-56 -> 8-28 (19 -> 9,5 °C)
+
 Spartemperatur - Configured "saving temperature" for thermostat in 0.5°C. 16-56 -> 8-28 °C (19 -> 9,5 °C)
 
 Debugging:
